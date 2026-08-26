@@ -1,0 +1,232 @@
+<title>Attendant e-Pass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --grad-top:#c9705f;
+  --grad-bottom:#e0a08c;
+  --page-bg:#ececec;
+  --teal:#6f9d9a;
+  --teal-dark:#5f8b88;
+  --red:#c0392b;
+  --red-dark:#a93226;
+  --blue:#2c4a86;
+  --card-bg:#ffffff;
+  --text-dark:#2b2b2b;
+  --text-muted:#8a8a8a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--page-bg);
+  display:flex;
+  justify-content:center;
+  padding:0;
+}
+.phone{
+  width:100%;
+  max-width:430px;
+  min-height:100vh;
+  background:linear-gradient(180deg,var(--grad-top) 0%, var(--grad-bottom) 45%, #ececec 45%, #ececec 100%);
+  position:relative;
+}
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 18px 0 18px;
+}
+.header h1{
+  color:#fff;
+  font-family:"Poppins","Inter",sans-serif;
+  font-size:17px;
+  font-weight:700;
+}
+.logo{
+  background:#fff;
+  border-radius:10px;
+  padding:8px 14px;
+  display:flex;
+  align-items:center;
+}
+.logo img{height:22px;display:block;}
+.avatar-wrap{
+  display:flex;
+  justify-content:center;
+  padding:22px 0 20px;
+}
+.avatar{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:#fff;
+  border:4px solid rgba(255,255,255,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.avatar svg{width:70%;height:70%;opacity:.25;}
+.form-area{
+  padding:0 18px;
+}
+.field{
+  width:100%;
+  background:#fff;
+  border:none;
+  border-radius:10px;
+  padding:14px 16px;
+  font-size:15px;
+  color:#333;
+  margin-bottom:14px;
+  outline:none;
+}
+.field::placeholder{color:#8a8a8a;}
+.field:disabled{opacity:.7;}
+.consent{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  margin-bottom:18px;
+}
+.consent input{margin-top:3px;width:16px;height:16px;flex-shrink:0;}
+.consent p{
+  color:#fff;
+  font-size:12.5px;
+  line-height:1.5;
+}
+.btn-capture{
+  width:100%;
+  background:var(--teal);
+  color:#fff;
+  border:none;
+  border-radius:24px;
+  padding:15px 0;
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:18px;
+  cursor:pointer;
+}
+.btn-capture:active{background:var(--teal-dark);}
+.info-card{
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:18px;
+  font-size:14px;
+  color:var(--text-dark);
+  line-height:1.9;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+  margin-bottom:18px;
+}
+.info-card .row{display:flex;justify-content:space-between;flex-wrap:wrap;}
+.info-card b{font-weight:700;}
+.reg-card{
+  background:var(--card-bg);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+  margin-bottom:24px;
+}
+.reg-title{
+  text-align:center;
+  color:var(--blue);
+  font-family:"Poppins","Inter",sans-serif;
+  font-weight:700;
+  font-size:16px;
+  padding:16px 0 12px;
+  border-bottom:1px solid #eee;
+}
+.reg-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  gap:10px;
+}
+.reg-row:last-child{border-bottom:none;}
+.reg-name{
+  flex:1;
+  font-size:14.5px;
+  color:var(--text-dark);
+}
+.reg-status{
+  flex:0 0 auto;
+  font-size:14px;
+  color:#888;
+  min-width:56px;
+  text-align:center;
+}
+.reg-status.inactive{color:#999;}
+.btn-remove{
+  background:var(--red);
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  padding:9px 16px;
+  font-size:13.5px;
+  font-weight:600;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.btn-remove:active{background:var(--red-dark);}
+</style>
+
+<div class="phone">
+  <div class="header">
+    <h1>Attendent e-Pass</h1>
+    <div class="logo">
+      <img src="https://vfpass.medanta.org:8092/assets/medanta-logo.png" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=&quot;font-weight:700;color:#c0665a;font-size:15px&quot;>medanta</span>'" alt="Medanta">
+    </div>
+  </div>
+
+  <div class="avatar-wrap">
+    <div class="avatar">
+      <svg viewBox="0 0 24 24" fill="#999"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.5c-3.3 0-9.8 1.6-9.8 4.9v2.4h19.6v-2.4c0-3.3-6.5-4.9-9.8-4.9z"/></svg>
+    </div>
+  </div>
+
+  <div class="form-area">
+    <input class="field" type="text" placeholder="Mobile Number" disabled>
+    <input class="field" type="text" placeholder="Visitor Name" disabled>
+
+    <label class="consent">
+      <input type="checkbox">
+      <p>I/We hereby voluntarily consent to the collection, capture, processing, storage, and use of my facial image/facial data for the purpose of visitor identification by Medanta Hospital, Gurgaon.</p>
+    </label>
+
+    <button class="btn-capture">Capture</button>
+
+    <div class="info-card">
+      <div class="row"><span><b>UHID :</b>MM03350401</span></div>
+      <div class="row"><span><b>Patient :</b>Mrs. Shefali Choursiya</span></div>
+      <div class="row"><span><b>Pass Type :</b>Attendant</span></div>
+      <div class="row"><span><b>Area :</b>7th Floor B2B3</span></div>
+      <div class="row"><span><b>Doctor :</b>RANDEEPG</span></div>
+      <div class="row"><span><b>Child Permission :</b>NO</span></div>
+      <div class="row"><span><b>Food Permission :</b>YES</span></div>
+      <div class="row"><span><b>Room :</b> 4723</span><span><b>Allowed :</b> 2</span></div>
+      <div class="row"><span><b>Visit Time :</b>|| 00:00 - 23:59</span></div>
+    </div>
+
+    <div class="reg-card">
+      <div class="reg-title">Attendant Registration</div>
+      <div id="reg-list"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const attendants = ["Shweta","Bhaskar Goel","Ashish Chaurasia","Rupali"];
+const list = document.getElementById('reg-list');
+attendants.forEach(name=>{
+  const row = document.createElement('div');
+  row.className = 'reg-row';
+  row.innerHTML = `
+    <span class="reg-name">${name}</span>
+    <span class="reg-status inactive">Inactive</span>
+    <button class="btn-remove">Remove</button>
+  `;
+  list.appendChild(row);
+});
+</script>
